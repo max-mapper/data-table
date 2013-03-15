@@ -1,0 +1,5 @@
+var container = document.querySelector('.container')
+var createTable = require('./')
+var fs = require('fs')
+var rows = JSON.parse(fs.readFileSync('data.json'))
+createTable(rows).appendTo(container)

@@ -1,0 +1,20 @@
+{
+  "name": "data-table",
+  "version": "0.0.0",
+  "description": "simple html5 json powered data table component",
+  "main": "index.js",
+  "scripts": {
+    "start": "browservefy test.js:bundle.js -- -t brfs"
+  },
+  "repository": "",
+  "author": "max ogden",
+  "license": "BSD",
+  "dependencies": {
+    "mustache": "~0.7.2",
+    "brfs": "0.0.2"
+  },
+  "devDependencies": {
+    "browserify": "~2.6.0",
+    "browservefy": "0.0.9"
+  }
+}

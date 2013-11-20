@@ -1,6 +1,6 @@
 {
   "name": "data-table",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "simple html5 json powered data table component",
   "main": "index.js",
   "scripts": {

@@ -6,6 +6,8 @@ module.exports = function(rows) {
   return new DataTable(rows)
 }
 
+module.exports.css = fs.readFileSync(__dirname + '/data-table.css')
+
 function DataTable(rows) {
   this.rows = rows
   this.headers = this.getHeaders(rows)

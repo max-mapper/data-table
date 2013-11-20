@@ -1,6 +1,6 @@
 var fs = require('fs')
 var mustache = require('mustache')
-var template = fs.readFileSync('template.mustache')
+var template = fs.readFileSync(__dirname + 'template.mustache')
 
 module.exports = function(rows) {
   return new DataTable(rows)

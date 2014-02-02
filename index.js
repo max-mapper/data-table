@@ -1,16 +1,17 @@
 var fs = require('fs')
 var mustache = require('mustache')
-var template = fs.readFileSync(__dirname + '/template.mustache')
+var template = fs.readFileSync(__dirname + '/template.mustache').toString()
 
 module.exports = function(rows) {
   return new DataTable(rows)
 }
 
-module.exports.css = fs.readFileSync(__dirname + '/data-table.css')
+module.exports.css = fs.readFileSync(__dirname + '/data-table.css').toString()
 
-function DataTable(rows) {
+function DataTable(rows, editable) {
   this.rows = rows
   this.headers = this.getHeaders(rows)
+  this.editable = editable || true
 }
 
 DataTable.prototype.appendTo = function(container) {
@@ -24,7 +25,7 @@ DataTable.prototype.appendTo = function(container) {
 }
 
 DataTable.prototype.isEditable = function() {
-  return true
+  return this.editable
 }
 
 DataTable.prototype.getHeaders = function(rows) {

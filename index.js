@@ -11,7 +11,7 @@ module.exports.css = fs.readFileSync(__dirname + '/data-table.css').toString()
 function DataTable(rows, editable) {
   this.rows = rows
   this.headers = this.getHeaders(rows)
-  this.editable = editable || true
+  this.editable = editable
 }
 
 DataTable.prototype.appendTo = function(container) {

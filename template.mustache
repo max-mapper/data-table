@@ -2,7 +2,7 @@
   <table class="data-table" cellspacing="0">
     <tbody>
       <tr>
-        {{#notEmpty}}<td class="column-header"></td>{{/notEmpty}}
+        {{#editable}}<td class="column-header"></td>{{/editable}}
         {{#headers}}
           <td class="column-header {{state}}">
             <div class="column-header-title {{state}}">
@@ -14,7 +14,7 @@
       </tr>
       {{#rows}}
         <tr data-id="{{id}}">
-          <td>{{#editable}}<a class="row-header-menu"></a>{{/editable}}</td>
+          {{#editable}}<td><a class="row-header-menu"></a></td>{{/editable}}
           {{#cells}}
           <td data-header="{{header}}" class="{{state}}">
             <div class="data-table-cell-content {{state}}">

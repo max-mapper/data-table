@@ -1,10 +1,10 @@
 <div class="data-table-container">
   <table class="data-table" cellspacing="0">
-    <tbody>
-      <tr>
+    <tbody class="data-table-body">
+      <tr class="table-row">
         {{#editable}}<td class="column-header"></td>{{/editable}}
         {{#headers}}
-          <td class="column-header {{state}}">
+          <td class="table-data column-header {{state}}">
             <div class="column-header-title {{state}}">
               {{#editable}}<a class="column-header-menu"></a>{{/editable}}
               <span class="column-header-name{{^editable}} slim{{/editable}}">{{header}}</span>
@@ -13,10 +13,10 @@
         {{/headers}}
       </tr>
       {{#rows}}
-        <tr data-id="{{id}}">
-          {{#editable}}<td><a class="row-header-menu"></a></td>{{/editable}}
+        <tr class="table-row" data-id="{{id}}">
+          {{#editable}}<td class="table-data"><a class="row-header-menu"></a></td>{{/editable}}
           {{#cells}}
-          <td data-header="{{header}}" class="{{state}}">
+          <td data-header="{{header}}" class="table-data {{state}}">
             <div class="data-table-cell-content {{state}}">
               {{#editable}}<a href="javascript:{}" class="data-table-cell-edit" title="Edit this cell">&nbsp;</a>{{/editable}}
               <div class="data-table-cell-value {{state}}">{{value}}</div>

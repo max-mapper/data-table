@@ -1,6 +1,6 @@
 /*
 
-Copyright 2010, Google Inc.
+Some CSS Copyright 2010, Google Inc.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -31,7 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, menu, time, mark, audio, video {
+body {
   margin: 0;
   padding: 0;
   border: 0;
@@ -39,113 +39,9 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
-}
-
-article, aside, figure, footer, header, hgroup, nav, section {
-  display: block;
-}
-
-ul {
-  list-style-position: inside;
-}
-
-a {
-  margin: 0;
-  padding: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-input, select {
-  vertical-align: middle;
-}
-
-body {
-  font-size: 62.5%;
+  font-size: 11px;
   font-family: Arial, sans-serif;
   background: #fff;
-}
-
-h1 {
-  font-size: 1.8em;
-}
-
-h2 {
-  font-size: 1.3em;
-  font-weight: bold;
-}
-
-a {
-  color: #4183C4;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-a.secondary {
-  color: #4272db;
-}
-
-
-/*
-
-Copyright 2010, Google Inc.
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are
-met:
-
-    * Redistributions of source code must retain the above copyright
-notice, this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above
-copyright notice, this list of conditions and the following disclaimer
-in the documentation and/or other materials provided with the
-distribution.
-    * Neither the name of Google Inc. nor the names of its
-contributors may be used to endorse or promote products derived from
-this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
-OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,           
-DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY           
-THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-*/
-
-.viewpanel-header {
-  position: relative;
-  background: #DCF0F4;
-  padding: 7px;
-  overflow: hidden;
-  text-align: right;
-}
-
-.viewpanel-rowrecord, .viewpanel-pagesize, .viewpanel-sorting {
-  position: absolute;
-  top: 7px;
-  background: #DCF0F4;
-  padding: 0 10px 0 0;
-}
-
-.viewpanel-pagingcount {
-  font-weight: bold
-  
 }
 
 .data-table-container {
@@ -154,34 +50,23 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 
 .data-table {
+  border-spacing: 0;
   margin: 0;
   padding: 0;
   border-collapse: collapse;
 }
 
-.data-table tr {
+.table-row {
   background: #fff;
 }
 
-.data-table td {
+.table-data {
   padding: 2px 5px;
   border-bottom: 1px dotted #ddd;
   border-right: 1px solid #ddd;
 }
 
-.data-table td:hover .data-table-cell-edit {
-  visibility: visible;
-}
-
-table.data-table > tbody > tr.even > td {
-  background: #f2f2f2;
-}
-
-table.data-table > tbody > tr.contextual > td > div {
-  opacity: 0.3;
-}
-
-table.data-table td.column-header {
+.column-header {
   vertical-align: top;
   white-space: nowrap;
   background: #ffe;
@@ -203,239 +88,8 @@ table.data-table td.column-header {
   display: block;
 }
 
-a.column-header-menu {
-  float: left;
-  display: block;
-  margin: 0 4px 0 0;
-  width: 17px;
-  height: 19px;
-  background-image: url(images/menu-dropdown.png);
-  background-repeat: no-repeat;
-}
-
-a.row-header-menu:hover {
-  background-position: -17px 0px;
-  text-decoration: none;
-}
-
-a.row-header-menu {
-  float: left;
-  display: block;
-  margin: -2px 0 -4px 0;
-  width: 17px;
-  height: 18px;
-  background-image: url(images/menu-dropdown.png);
-  background-repeat: no-repeat;
-}
-
-a.column-header-menu:hover {
-  background-position: -17px 0px;
-  text-decoration: none;
-}
-
-.column-header-recon-stats-bar {
-  margin-top: 10px;
-  height: 4px;
-  background: #ddd;
-  border: 1px solid #ccc;
-  position: relative;
-  width: 100%;
-}
-
-.column-header-recon-stats-matched {
-  position: absolute;
-  height: 100%;
-  background: #282;
-}
-
-.column-header-recon-stats-blanks {
-  position: absolute;
-  height: 100%;
-  background: #3d3;
-}
-
-div.data-table-cell-content {
+.data-table-cell-content {
   line-height: 1.2;
   color: #222;
   position: relative;
-}
-
-div.data-table-cell-content-numeric {
-  text-align: right;
-}
-
-a.data-table-cell-edit {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: block;
-  width: 25px;
-  height: 16px;
-  text-decoration: none;
-  background-image: url(images/edit-map.png);
-  background-repeat: no-repeat;
-  visibility: hidden;
-}
-
-a.data-table-cell-edit:hover {
-  background-position: -25px 0px;
-}
-
-div.data-table-cell-content-numeric > a.data-table-cell-edit {
-  left: 0px;
-  right: auto;
-}
-
-.data-table-value-nonstring {
-  color: #282;
-}
-
-.data-table-error {
-  color: red;
-}
-
-div.data-table-recon-candidates {
-  padding: 1px 0;
-  min-width: 15em;
-  color: #777;
-}
-
-div.data-table-recon-candidate {
-  padding: 1px 35px 1px;
-  position: relative;
-}
-
-a.data-table-recon-topic {
-  color: #4272db;
-}
-
-.data-table-recon-score, .data-table-recon-new {
-  color: #aaa;
-  margin: 0 0.5em;
-}
-
-a.data-table-recon-action, .data-table-recon-extra > a {
-  text-decoration: none;
-  color: #4272db;
-}
-
-a.data-table-recon-action, .data-table-recon-extra {
-  font-size: 0.8em;
-  display: block;
-  margin: 3px 0 0;
-}
-
-a.data-table-recon-match, a.data-table-recon-match-similar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 16px;
-  height: 16px;
-  background-image: url(images/checks-map.png);
-  background-repeat: no-repeat;
-  background-position: -16px 0;
-  text-decoration: none;
-}
-
-a.data-table-recon-match:hover {
-  background-position: 0 0;
-}
-
-a.data-table-recon-match-similar {
-  background-position: -16px -16px;
-  left: 16px;
-}
-
-a.data-table-recon-match-similar:hover {
-  background-position: 0 -16px;
-}
-
-a.data-table-star-on, a.data-table-star-off, a.data-table-flag-on, a.data-table-flag-off {
-  display: block;
-  width: 16px;
-  height: 16px;
-  background-repeat: no-repeat;
-  text-decoration: none;
-}
-
-a.data-table-star-on {
-  background-position: 0 0;
-}
-
-a.data-table-star-off {
-  background-position: -17px 0;
-}
-
-a.data-table-flag-on {
-  background-position: 0 -17px;
-}
-
-a.data-table-flag-off {
-  background-position: -17px -17px;
-}
-
-.data-table-cell-editor, .data-table-topic-popup {
-  overflow: auto;
-  border: 1px solid #E1EEEC;
-  background: #DCF0F4;
-  padding: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-}
-
-.data-table-topic-popup-header {
-  padding: 0 0 5px;
-}
-
-.data-table-cell-editor-editor {
-  overflow: hidden;
-  display: block;
-  width: 98%;
-  height: 3em;
-  font-family: monospace;
-  margin: 3px 0;
-}
-
-.data-table-cell-copypaste-editor {
-  overflow: hidden;
-  display: block;
-  width: 98%;
-  height: 10em;
-  font-family: monospace;
-  margin: 3px 0;
-}
-
-.data-table-cell-editor-action {
-  float: left;
-  vertical-align: bottom;
-  text-align: center;
-}
-
-.data-table-cell-editor-key {
-  font-size: 0.8em;
-  color: #999;
-}
-
-ul.sorting-dialog-blank-error-positions {
-  margin: 0;
-  padding: 5px;
-  height: 10em;
-  border: 1px solid #ccc;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-}
-
-ul.sorting-dialog-blank-error-positions > li {
-  display: block;
-  border: 1px solid #ccc;
-  background: #eee;
-  padding: 5px;
-  margin: 2px;
-  cursor: move;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
 }

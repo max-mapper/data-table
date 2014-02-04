@@ -4,7 +4,7 @@
   "description": "simple html5 json powered data table component",
   "main": "index.js",
   "scripts": {
-    "start": "browservefy test.js:bundle.js -- -t brfs"
+    "start": "beefy test.js:bundle.js -- -t brfs"
   },
   "repository": {
     "type": "git",
@@ -14,7 +14,7 @@
   "license": "BSD-2-Clause",
   "dependencies": {
     "mustache": "~0.7.2",
-    "brfs": "0.0.2"
+    "brfs": "~0.0.2"
   },
   "browserify": {
     "transform": [
@@ -22,8 +22,8 @@
     ]
   },
   "devDependencies": {
-    "browserify": "~2.6.0",
-    "browservefy": "0.0.9"
+    "beefy": "~0.7.1",
+    "browserify": "~3.24.11"
   },
   "bugs": {
     "url": "https://github.com/maxogden/data-table/issues"

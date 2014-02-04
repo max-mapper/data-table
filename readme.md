@@ -6,6 +6,13 @@ super simple html5 json powered data table component. inspired by google refine/
 npm install data-table
 ```
 
+## run the demo/hack on it
+
+```
+npm install
+npm start
+```
+
 ## usage
 
 ```js

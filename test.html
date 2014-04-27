@@ -1,12 +1,9 @@
-/*
-
+<!DOCTYPE html><html><head><style type='text/css'>/*
 Some CSS Copyright 2010, Google Inc.
 All rights reserved.
-
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
 met:
-
     * Redistributions of source code must retain the above copyright
 notice, this list of conditions and the following disclaimer.
     * Redistributions in binary form must reproduce the above
@@ -16,7 +13,6 @@ distribution.
     * Neither the name of Google Inc. nor the names of its
 contributors may be used to endorse or promote products derived from
 this software without specific prior written permission.
-
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
 "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
 LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
@@ -28,9 +24,7 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 */
-
 body {
   margin: 0;
   padding: 0;
@@ -43,53 +37,81 @@ body {
   font-family: Arial, sans-serif;
   background: #fff;
 }
-
 .data-table-container {
   display: block;
   border-top: 1px solid #E1EEEC;
 }
-
 .data-table {
   border-spacing: 0;
   margin: 0;
   padding: 0;
   border-collapse: collapse;
 }
-
 .table-row {
   background: #fff;
 }
-
-.table-data {
+.c {
   padding: 2px 5px;
   border-bottom: 1px dotted #ddd;
   border-right: 1px solid #ddd;
+  line-height: 1.4;
 }
-
 .column-header {
   vertical-align: top;
   white-space: nowrap;
-  background: #ffe;
   cursor: pointer;
   padding: 2px 6px 2px 4px;
   border-right: 1px solid #ddd;
-  font-weight: bold;
 }
-
+.bgy { background-color: #ffe; }
+.b { font-weight: bold; }
 .column-header-name {
   margin: 0 0 0 21px;
   padding: 2px 0 0 0;
   display: block;
 }
-
 .column-header-name.slim {
   margin: 0;
   padding: 2px 0 0 0;
   display: block;
 }
-
-.data-table-cell-content {
-  line-height: 1.2;
-  color: #222;
-  position: relative;
-}
+.tl { text-align: left; }
+</style></head><body><div class="data-table-container">
+  <table class="data-table" cellspacing="0">
+<thead><th class="tl cell column-header b bgy ">
+  a
+</th>
+<th class="tl cell column-header b bgy ">
+  b
+</th>
+<th class="tl cell column-header b bgy ">
+  c
+</th>
+      </tr>
+    </thead>
+    <tbody class="data-table-body">
+<tr class="table-row" data-id="1">
+  <td data-header="a" class="c">
+    <div class="cv">1</div>
+  </td>
+  <td data-header="b" class="c">
+    <div class="cv">2</div>
+  </td>
+  <td data-header="c" class="c">
+    <div class="cv">3</div>
+  </td>
+</tr>
+<tr class="table-row" data-id="2">
+  <td data-header="a" class="c">
+    <div class="cv">4</div>
+  </td>
+  <td data-header="b" class="c">
+    <div class="cv">5</div>
+  </td>
+  <td data-header="c" class="c">
+    <div class="cv">6</div>
+  </td>
+</tr>
+    </tbody>
+  </table>
+</div></body></html>

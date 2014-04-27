@@ -1,79 +1,50 @@
+var through = require('through2')
 var fs = require('fs')
-var mustache = require('mustache')
-var template = fs.readFileSync(__dirname + '/template.mustache').toString()
+var beforeHeader = fs.readFileSync('./before-header.html')
+var beforeRow = fs.readFileSync('./before-row.html')
+var afterRow = fs.readFileSync('./after-row.html')
 
-module.exports = function(rows) {
-  return new DataTable(rows)
-}
-
-module.exports.css = fs.readFileSync(__dirname + '/data-table.css').toString()
-
-function DataTable(rows, editable) {
-  this.rows = rows
-  this.headers = this.getHeaders(rows)
-  this.editable = editable
-}
-
-DataTable.prototype.appendTo = function(container) {
-  if (typeof container === 'object') {
-    var rendered = this.render()
-    container.innerHTML = rendered
+function header(keys) {
+  var out = ""
+  console.error('keys', keys)
+  for (var i = 0; i < keys.length; i++) {
+    out += '<th class="tl cell column-header b bgy ">\n'
+         + '  ' + keys[i] + '\n'
+         + '</th>\n'
   }
-  else {
-    document.querySelector(container).appendChild(this.render())
+  return out
+}
+
+function row(keys, values, rowNum) {
+  var out = '<tr class="table-row" data-id="' + rowNum + '">\n'
+  for (var i = 0; i < values.length; i++) {
+    out += '  <td data-header="' + keys[i] + '" class="c">\n'
+         + '    <div class="cv">' + values[i] + '</div>\n'
+         + '  </td>\n'
   }
+  out += '</tr>\n'
+  return out
 }
 
-DataTable.prototype.isEditable = function() {
-  return this.editable
-}
+module.exports = sheet
 
-DataTable.prototype.getHeaders = function(rows) {
-  var headers = {}
-  this.rows.forEach(function(row) {
-    for (var key in row) headers[key] = true
-  })
-  return Object.keys(headers)
-}
+function sheet(keys) {
+  var stream = through.obj(write, end)
+  var rowCount = 0
 
-DataTable.prototype.domify = function(htmlString) {
-  var div = document.createElement('div')
-  div.innerHTML = htmlString
-  return div.childNodes
-}
-
-DataTable.prototype.render = function() {
-  var self = this
-  var rows = this.rows
-  if (rows.length < 1) return mustache.render(template, {})
-
-  var tableRows = []
-
-  rows.map(function(row) {
-    var cells = []
-    self.headers.map(function(header) {
-      var value = ""
-      if (row[header]) {
-        value = row[header]
-        if (typeof(value) == "object") value = JSON.stringify(value)
-      }
-      var cell = {header: header, value: value}
-      cells.push(cell)
-    })
-    tableRows.push({id: row.id, cells: cells})
-  })
-
-  var headers = this.headers.map(function(header) {
-    var header = {header: header}
-    return header
-  })
-
-  var htmlString = mustache.render(template, {
-    rows: tableRows,
-    headers: headers,
-    notEmpty: function() { return self.headers.length > 0 },
-    editable: self.isEditable()
-  })
+  stream.push(beforeHeader.toString())
+  stream.push(header(keys))
+  stream.push(beforeRow.toString())
   
-  return htmlString
+  return stream
+  
+  function write(obj, enc, next) {
+    this.push(row(keys, obj, ++rowCount))
+    next()
+  }
+
+  function end() {
+    this.push(afterRow.toString())
+    this.push(null)
+  }
 }

@@ -1,11 +1,8 @@
 {
   "name": "data-table",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "description": "simple html5 json powered data table component",
   "main": "index.js",
-  "scripts": {
-    "start": "beefy test.js:bundle.js -- -t brfs"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/maxogden/data-table.git"
@@ -13,17 +10,7 @@
   "author": "max ogden",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "mustache": "~0.7.2",
-    "brfs": "~0.0.2"
-  },
-  "browserify": {
-    "transform": [
-      "brfs"
-    ]
-  },
-  "devDependencies": {
-    "beefy": "~0.7.1",
-    "browserify": "~3.24.11"
+    "through2": "^0.4.1"
   },
   "bugs": {
     "url": "https://github.com/maxogden/data-table/issues"

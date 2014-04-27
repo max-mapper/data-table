@@ -18,10 +18,13 @@ npm start
 ```js
 var createTable = require('data-table')
 
-var table = createTable([{ id: 1, name: 'bob'}])
-table.appendTo(document.body)
-table.on('edit', function(newRow, oldRow) {})
-table.set(newRowData)
+var table = createTable(['a','b','c']) // headers
+
+table.pipe(process.stdout)
+
+table.write(['1', '2', '3']) // cells
+table.write(['4', '5', '6']) // cells
+table.end()
 ```
 
 ## license

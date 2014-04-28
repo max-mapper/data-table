@@ -1,12 +1,12 @@
 var through = require('through2')
+var path = require('path')
 var fs = require('fs')
-var beforeHeader = fs.readFileSync('./before-header.html')
-var beforeRow = fs.readFileSync('./before-row.html')
-var afterRow = fs.readFileSync('./after-row.html')
+var beforeHeader = fs.readFileSync(path.join(__dirname, 'before-header.html'))
+var beforeRow = fs.readFileSync(path.join(__dirname, 'before-row.html'))
+var afterRow = fs.readFileSync(path.join(__dirname, 'after-row.html'))
 
 function header(keys) {
   var out = ""
-  console.error('keys', keys)
   for (var i = 0; i < keys.length; i++) {
     out += '<th class="tl cell column-header b bgy ">\n'
          + '  ' + keys[i] + '\n'

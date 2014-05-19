@@ -15,11 +15,13 @@ function header(keys) {
   return out
 }
 
-function row(keys, values, rowNum) {
+function row(keys, data, rowNum) {
   var out = '<tr class="table-row" data-id="' + rowNum + '">\n'
-  for (var i = 0; i < values.length; i++) {
+  for (var i = 0; i < keys.length; i++) {
+    var val = data[keys[i]] || ''
+    if (typeof val === 'object') val = JSON.stringify(val)
     out += '  <td data-header="' + keys[i] + '" class="c">\n'
-         + '    <div class="cv">' + values[i] + '</div>\n'
+         + '    <div class="cv">' + val + '</div>\n'
          + '  </td>\n'
   }
   out += '</tr>\n'

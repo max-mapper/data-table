@@ -27,6 +27,11 @@ table.write(['4', '5', '6']) // cells
 table.end()
 ```
 
+If you only want the `<table>` element, you can set a `tableonly` flag like this:
+```js
+var table = createTable(['a', 'b', 'c'], {tableonly: true})
+```
+
 ## license
 
 BSD

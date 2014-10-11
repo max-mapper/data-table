@@ -4,6 +4,8 @@ var fs = require('fs')
 var beforeHeader = fs.readFileSync(path.join(__dirname, 'before-header.html'))
 var beforeRow = fs.readFileSync(path.join(__dirname, 'before-row.html'))
 var afterRow = fs.readFileSync(path.join(__dirname, 'after-row.html'))
+var beforeTable = fs.readFileSync(path.join(__dirname, 'before-table.html'))
+var afterTable = fs.readFileSync(path.join(__dirname, 'after-table.html'))
 
 function header(keys) {
   var out = ""
@@ -30,10 +32,11 @@ function row(keys, data, rowNum) {
 
 module.exports = sheet
 
-function sheet(keys) {
+function sheet(keys, opts) {
   var stream = through.obj(write, end)
   var rowCount = 0
 
+  if(!(opts && opts.tableonly)) stream.push(beforeTable.toString())
   stream.push(beforeHeader.toString())
   stream.push(header(keys))
   stream.push(beforeRow.toString())
@@ -47,6 +50,7 @@ function sheet(keys) {
 
   function end() {
     this.push(afterRow.toString())
+    if(!(opts && opts.tableonly)) stream.push(afterTable.toString())
     this.push(null)
   }
 }

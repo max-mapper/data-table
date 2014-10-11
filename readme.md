@@ -22,8 +22,8 @@ var table = createTable(['a','b','c']) // headers
 
 table.pipe(process.stdout)
 
-table.write(['1', '2', '3']) // cells
-table.write(['4', '5', '6']) // cells
+table.write({a: '1', b: '2', c: '3'}) // cells
+table.write({a: '4', b: '5', c: '6'}) // cells
 table.end()
 ```
 
